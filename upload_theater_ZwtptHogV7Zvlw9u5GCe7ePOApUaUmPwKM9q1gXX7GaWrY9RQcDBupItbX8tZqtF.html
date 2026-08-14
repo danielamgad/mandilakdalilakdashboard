@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>منديلك دليلك | إضافة مسرح</title>
+
+
+    <!-- Cairo -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="./Css/upload_theater.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <a
+            href="./upload.html"
+            class="logo"
+        >
+
+            <img
+                src="./imgs/logo.png"
+                alt="منديلك دليلك"
+            >
+
+            <span>
+                منديلك دليلك
+            </span>
+
+        </a>
+
+
+        <a
+            href="././upload_vf480lq5wrCqKoChjzgPqOa3sZACeBBBamG5xsjl4Lkr531YAP2iuPCTMVVUAak4.html"
+            class="back-link"
+        >
+
+            لوحة الإدارة
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="container">
+
+
+        <div class="heading">
+
+            <div class="badge">
+
+                <i class="fa-solid fa-masks-theater"></i>
+
+                دليل المسارح
+
+            </div>
+
+
+            <h1>
+
+                إضافة <span>مسرح</span>
+
+            </h1>
+
+
+            <p>
+
+                أضف بيانات المسرح والصور،
+                وسيتم حفظها تلقائيًا في قاعدة بيانات
+                منديلك دليلك.
+
+            </p>
+
+        </div>
+
+
+
+        <section class="upload-card">
+
+
+            <form id="theaterForm">
+
+
+                <!-- =================================================
+                     BASIC INFORMATION
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        المعلومات الأساسية
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group full">
+
+                            <label>
+
+                                اسم المكان
+
+                                <span>*</span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="placeName"
+                                required
+                                placeholder="مثال: مسرح مارمينا"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CAPACITY
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        السعة والتجهيزات
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                سعة المسرح
+
+                                <span>*</span>
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="capacity"
+                                min="0"
+                                step="1"
+                                required
+                                placeholder="عدد الأشخاص"
+                            >
+
+                            <span class="field-note">
+                                أقصى عدد من الأشخاص يمكن للمسرح استيعابه
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRICES
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        الأسعار
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                سعر المسرح / الساعة
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="theaterHour"
+                                min="0"
+                                step="0.01"
+                                value="0"
+                            >
+
+                            <span class="field-note">
+                                سعر الساعة للبروفات والتدريب
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                المسرح + الصوت والتكييف / الساعة
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="theaterSoundAcHour"
+                                min="0"
+                                step="0.01"
+                                value="0"
+                            >
+
+                            <span class="field-note">
+                                سعر الساعة للبروفات أو التدريب مع الصوت والتكييف
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                السعر النهائي للحفلة
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="price"
+                                min="0"
+                                step="0.01"
+                                value="0"
+                            >
+
+                            <span class="field-note">
+                                السعر النهائي للحفلة وليس سعر الساعة
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                مبلغ التأمين
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="insurance"
+                                min="0"
+                                step="0.01"
+                                value="0"
+                            >
+
+                            <span class="field-note">
+                                مبلغ التأمين في حالة حدوث تلف
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CONTACT
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-address-book"></i>
+
+                        التواصل والموقع
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                WhatsApp
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="whatsapp"
+                                placeholder="مثال: 201234567890"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+
+                                رابط Google Maps
+
+                            </label>
+
+                            <input
+                                type="url"
+                                id="mapsUrl"
+                                placeholder="https://maps.google.com/..."
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     IMAGES
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-images"></i>
+
+                        صور المسرح
+
+                    </div>
+
+
+                    <div class="images-area">
+
+
+                        <label
+                            class="drop-zone"
+                            id="dropZone"
+                        >
+
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept="image/*"
+                                multiple
+                            >
+
+
+                            <div class="upload-icon">
+
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            </div>
+
+
+                            <h3>
+                                اسحب الصور هنا
+                            </h3>
+
+
+                            <p>
+                                أو اضغط لاختيار الصور من جهازك
+                            </p>
+
+                        </label>
+
+
+                        <div
+                            class="file-list"
+                            id="fileList"
+                        ></div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DESCRIPTION
+                ================================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <i class="fa-solid fa-align-right"></i>
+
+                        وصف المسرح
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <textarea
+                            id="description"
+                            placeholder="اكتب وصفًا مختصرًا ومفيدًا عن المسرح..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBMIT
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    إضافة المسرح
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- =================================================
+                 SUCCESS
+            ================================================== -->
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+
+                <div class="success-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <h2>
+                    تم إضافة المسرح بنجاح
+                </h2>
+
+
+                <div
+                    class="theater-id-result"
+                    id="theaterIdResult"
+                ></div>
+
+
+                <p style="margin-top:10px;">
+
+                    سيتم إعادتك إلى صفحة إضافة المسرح
+                    خلال <strong>5 ثوانٍ</strong>.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script src="./Js/upload_theater.js"></script>
+
+</body>
+
+</html>
