@@ -1,0 +1,813 @@
+:root {
+
+    --burgundy: #650b08;
+    --red: #d9271c;
+    --red-dark: #450704;
+
+    --gold: #f5d98a;
+    --gold-dark: #c89b3c;
+
+    --brown: #32170d;
+    --brown-light: #5a2a17;
+
+    --cream: #fff8e8;
+    --white: #ffffff;
+
+    --text: #3a2a24;
+    --muted: #786b64;
+
+    --border:
+        rgba(200, 155, 60, 0.22);
+
+    --shadow:
+        0 20px 50px
+        rgba(50, 23, 13, 0.1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Cairo", sans-serif;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(217, 39, 28, 0.25),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(200, 155, 60, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--red-dark),
+            var(--brown)
+        );
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    top: -300px;
+    right: -200px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(245, 217, 138, 0.13);
+
+    box-shadow:
+
+        0 0 0 80px
+        rgba(245, 217, 138, 0.025),
+
+        0 0 0 160px
+        rgba(245, 217, 138, 0.015);
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -250px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(217, 39, 28, 0.12);
+
+    filter: blur(20px);
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(94%, 950px);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 1;
+
+    margin: 0 auto;
+
+    padding: 35px 0;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    width: 110px;
+    height: 110px;
+
+    object-fit: contain;
+
+    margin-bottom: 22px;
+
+    filter:
+        drop-shadow(
+            0 18px 30px
+            rgba(0, 0, 0, 0.35)
+        );
+
+    animation:
+        floating 5s ease-in-out infinite;
+
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        rgba(245, 217, 138, 0.25);
+
+    background:
+        rgba(245, 217, 138, 0.07);
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.badge i {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+h1 {
+
+    font-size:
+        clamp(38px, 6vw, 58px);
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+
+}
+
+
+h1 span {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================================
+   UPLOAD OPTIONS
+========================================================= */
+
+.upload-options {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.upload-card {
+
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 32px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid
+        rgba(245, 217, 138, 0.16);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.upload-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--gold)
+        );
+
+    opacity: .75;
+
+}
+
+
+.upload-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(245, 217, 138, .4);
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 28px 55px
+        rgba(0, 0, 0, .25);
+
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.card-icon {
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(245, 217, 138, .08);
+
+    border:
+        1px solid
+        rgba(245, 217, 138, .12);
+
+    color: var(--gold);
+
+    font-size: 31px;
+
+    margin-bottom: 20px;
+
+    transition: .3s;
+
+}
+
+
+.upload-card:hover .card-icon {
+
+    background:
+        var(--gold);
+
+    color:
+        var(--brown);
+
+    transform:
+        scale(1.06);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content h2 {
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    margin-bottom: 8px;
+
+}
+
+
+.card-content p {
+
+    color:
+        rgba(255, 255, 255, .62);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    max-width: 360px;
+
+}
+
+
+/* =========================================================
+   CARD ARROW
+========================================================= */
+
+.card-arrow {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 18px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 217, 138, .08);
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    transition: .3s;
+
+}
+
+
+.upload-card:hover .card-arrow {
+
+    background: var(--gold);
+
+    color: var(--brown);
+
+    transform:
+        translateX(-4px);
+
+}
+
+
+/* =========================================================
+   SITE FOOTER
+   SAME FOOTER AS THE PROJECT
+========================================================= */
+
+.site-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 15px 10px;
+
+    background: transparent;
+
+    border: none;
+
+    color:
+        rgba(255, 255, 255, .55);
+
+    flex-shrink: 0;
+
+}
+
+
+.footer-content {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    gap: 10px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+}
+
+
+.footer-content > span {
+
+    display: flex;
+
+    align-items: center;
+
+    white-space: nowrap;
+
+}
+
+
+.footer-content strong {
+
+    color: var(--gold);
+
+    font-weight: 800;
+
+}
+
+
+.footer-content .fa-heart {
+
+    color: var(--red);
+
+    margin: 0 3px;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.footer-social {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+}
+
+
+.footer-social a {
+
+    width: 27px;
+    height: 27px;
+
+    min-width: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color:
+        rgba(255, 255, 255, .72);
+
+    border:
+        1px solid
+        rgba(245, 217, 138, .15);
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    transition: .25s;
+
+}
+
+
+.footer-social a:hover {
+
+    color: var(--gold);
+
+    border-color:
+        rgba(245, 217, 138, .4);
+
+    background:
+        rgba(245, 217, 138, .07);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.footer-social .disabled-social {
+
+    cursor: default;
+
+    opacity: .5;
+
+}
+
+
+.footer-social .disabled-social:hover {
+
+    color:
+        rgba(255, 255, 255, .72);
+
+    border-color:
+        rgba(245, 217, 138, .15);
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+
+    .page {
+
+        width: min(92%, 520px);
+
+        padding:
+            30px 0 25px;
+
+    }
+
+
+    .logo {
+
+        width: 95px;
+        height: 95px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .badge {
+
+        margin-bottom: 12px;
+
+    }
+
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .upload-options {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .upload-card {
+
+        min-height: 205px;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .card-icon {
+
+        width: 60px;
+        height: 60px;
+
+        font-size: 27px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .card-content h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .card-content p {
+
+        font-size: 11px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .card-arrow {
+
+        margin-top: 12px;
+
+    }
+
+}
